@@ -429,7 +429,7 @@ class CumotionRobotSegmenter(Node):
                                             'mono8',
                                             camera_header[idx],
                                             0,
-                                            False)
+                                            True)
         self.mask_publishers[idx].publish(built_mask_image)
 
         if depth_encoding[idx] == '32FC1':
@@ -446,7 +446,7 @@ class CumotionRobotSegmenter(Node):
                                             depth_encoding[idx],
                                             camera_header[idx],
                                             0,
-                                            False)
+                                            True)
         self.world_depth_publishers[idx].publish(built_depth_image)
 
 

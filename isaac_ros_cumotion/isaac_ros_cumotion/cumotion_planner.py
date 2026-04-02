@@ -751,7 +751,7 @@ class CumotionActionServer(Node):
                                str(time_dilation_factor))
         plan_req = goal_handle.request.request
 
-        goal_handle.succeed()
+        # goal_handle.succeed()
 
         scene = goal_handle.request.planning_options.planning_scene_diff
 
@@ -918,6 +918,7 @@ class CumotionActionServer(Node):
             + str(motion_gen_result.status)
         )
         self.__query_count += 1
+        goal_handle.succeed(result)
         return result
 
     def publish_voxels(self, voxels):
